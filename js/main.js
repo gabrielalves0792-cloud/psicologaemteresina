@@ -235,7 +235,7 @@ window.addEventListener('DOMContentLoaded', function () {
     };
 
     /* Envio para Google Sheets via Apps Script */
-    fetch('APPS_SCRIPT_URL_AQUI', {
+    fetch('https://script.google.com/macros/s/AKfycbwzU2v_AQSNvxSO2l28z8G9Dw2qt6qPm9bBIlHwBFqkCk8TK6-tTanIQOUClTfBrIuJ/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
