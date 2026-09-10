@@ -1,16 +1,16 @@
 /* ============================================================
-   DATAΛAYER + ECOMMERCE GA4 · Site Prima Psicóloga
+   DATAΛAYER + ECOMMERCE GA4 · Site Maria Gerlane Psicóloga
    GTM Container: GTM-5GZC63CS  |  GA4: G-GDPWY4E8FK
 ============================================================ */
 
 window.dataLayer = window.dataLayer || [];
 
 const PRODUTO = {
-  item_id:       'consulta-prima-psicologa',
-  item_name:     'Consulta Psicológica – Prima',
+  item_id:       'consulta-maria-gerlane-psicologa',
+  item_name:     'Consulta Psicológica – Maria Gerlane',
   item_category: 'Psicologia',
   item_category2:'Saúde Mental',
-  item_brand:    'Prima Psicóloga',
+  item_brand:    'Maria Gerlane Psicóloga',
   currency:      'BRL',
   price:         0,
   quantity:      1
@@ -284,7 +284,7 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   function onError(err) {
-    console.error('[Prima Site] Erro no envio:', err);
+    console.error('[Site Maria Gerlane] Erro no envio:', err);
     errorEl.hidden = false;
     resetBtn();
   }
