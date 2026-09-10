@@ -278,7 +278,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var waNumber = sessionStorage.getItem('waNumber') || '5586995208036';
       sessionStorage.removeItem('waRedirect');
       sessionStorage.removeItem('waNumber');
-      var msg = 'Olá! Meu nome é ' + payload.nome + '. Acabei de preencher o formulário no site e gostaria de agendar uma consulta.';
+      var msg = 'Olá! Vim pelo site e gostaria de agendar uma primeira consulta para falar com você. Meu nome é ' + payload.nome + '.';
       window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
     }
 
