@@ -1,6 +1,6 @@
 /* ============================================================
    DATAΛAYER + ECOMMERCE GA4 · Site Prima Psicóloga
-   GTM Container: GTM-XXXXXXX  |  GA4: G-XXXXXXXXXX
+   GTM Container: GTM-5GZC63CS  |  GA4: G-GDPWY4E8FK
 ============================================================ */
 
 window.dataLayer = window.dataLayer || [];
