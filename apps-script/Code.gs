@@ -1,5 +1,5 @@
 /**
- * Google Apps Script – Recebe leads do site Prima Psicóloga
+ * Google Apps Script – Recebe leads do site Maria Gerlane Psicóloga
  * Implantação: Extensões → Apps Script → Implantar → Novo implante → App da Web
  *   · Executar como: "Eu (gabriel@joinmind.com.br)"
  *   · Quem tem acesso: "Qualquer pessoa"
@@ -42,5 +42,5 @@ function buildResponse(obj) {
 
 /* doGet apenas para confirmar que o script está no ar */
 function doGet() {
-  return buildResponse({ status: 'ok', script: 'Prima Psicóloga – Leads' });
+  return buildResponse({ status: 'ok', script: 'Maria Gerlane Psicóloga – Leads' });
 }
