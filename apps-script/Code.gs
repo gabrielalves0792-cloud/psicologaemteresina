@@ -52,8 +52,10 @@ function notifyByEmail(data) {
       'Data/Hora: '  + (data.timestamp  || new Date().toISOString());
 
     MailApp.sendEmail(NOTIFY_EMAIL, assunto, corpo);
+    Logger.log('E-mail enviado com sucesso para ' + NOTIFY_EMAIL);
   } catch (err) {
     // não interrompe o fluxo principal se o e-mail falhar
+    Logger.log('ERRO ao enviar e-mail: ' + err.toString());
   }
 }
 
