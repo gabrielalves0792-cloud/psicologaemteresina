@@ -7,7 +7,7 @@ window.dataLayer = window.dataLayer || [];
 
 const PRODUTO = {
   item_id:       'consulta-maria-gerlane-psicologa',
-  item_name:     'Consulta Psicológica – Maria Gerlane',
+  item_name:     'Consulta Psicológica - Maria Gerlane',
   item_category: 'Psicologia',
   item_category2:'Saúde Mental',
   item_brand:    'Maria Gerlane Psicóloga',
@@ -81,16 +81,29 @@ window.addEventListener('DOMContentLoaded', function () {
         event: 'whatsapp_click',
         click_position: el.dataset.ctaPosition || 'desconhecido'
       });
-      /* geração de lead via WhatsApp */
-      dlPush({
-        event: 'generate_lead',
-        lead_source: 'whatsapp',
-        lead_position: el.dataset.ctaPosition || 'desconhecido',
-        currency: 'BRL',
-        value: 0
-      });
     });
   });
+
+  /* -------- Botões "Falar no WhatsApp" → direcionam para o formulário -------- */
+  document.querySelectorAll('.whatsapp-cta').forEach(function (el) {
+    el.addEventListener('click', function () {
+      sessionStorage.setItem('waRedirect', '1');
+      sessionStorage.setItem('waNumber', el.dataset.waNumber || '');
+      highlightForm();
+    });
+  });
+
+  function highlightForm() {
+    var wrap = document.querySelector('.contato__form-wrap');
+    if (!wrap) return;
+    wrap.classList.remove('contato__form-wrap--highlight');
+    /* força reflow para permitir reiniciar a animação em cliques repetidos */
+    void wrap.offsetWidth;
+    wrap.classList.add('contato__form-wrap--highlight');
+    setTimeout(function () {
+      wrap.classList.remove('contato__form-wrap--highlight');
+    }, 3000);
+  }
 
   /* -------- Modalidade cards -------- */
   document.querySelectorAll('.track-select-content').forEach(function (el) {
@@ -259,6 +272,15 @@ window.addEventListener('DOMContentLoaded', function () {
     checkoutFired = false;
     payFired = false;
     resetBtn();
+
+    /* Se a pessoa chegou pelo botão do WhatsApp, abre a conversa após o envio */
+    if (sessionStorage.getItem('waRedirect') === '1') {
+      var waNumber = sessionStorage.getItem('waNumber') || '5586995208036';
+      sessionStorage.removeItem('waRedirect');
+      sessionStorage.removeItem('waNumber');
+      var msg = 'Olá! Vim pelo site e gostaria de agendar uma primeira consulta para falar com você. Meu nome é ' + payload.nome + '.';
+      window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+    }
 
     /* GA4 Ecommerce: purchase (= lead convertido) */
     dlPush({
