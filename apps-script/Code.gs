@@ -6,8 +6,8 @@
  * Após implantar, copie a URL e cole em js/main.js → APPS_SCRIPT_URL_AQUI
  */
 
-var SHEET_ID   = '1BcQCZ1hjF4Qyd452G8v7_tsBYEGXWVWDNW2pJpM5-6U';
-var SHEET_NAME = 'Leads';
+var SHEET_ID    = '1BcQCZ1hjF4Qyd452G8v7_tsBYEGXWVWDNW2pJpM5-6U';
+var SHEET_NAME  = 'Leads';
 
 function doPost(e) {
   try {
